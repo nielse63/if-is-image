@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/nielse63/if-is-image.svg?branch=master)](https://travis-ci.org/nielse63/if-is-image)
 [![Coverage Status](https://coveralls.io/repos/github/nielse63/if-is-image/badge.svg?branch=master)](https://coveralls.io/github/nielse63/if-is-image?branch=master)
-[![devDependencies Status](https://david-dm.org/nielse63/if-is-image/dev-status.svg?style=flat-square)](https://david-dm.org/nielse63/if-is-image?type=dev)
+[![devDependencies Status](https://david-dm.org/nielse63/if-is-image/dev-status.svg)](https://david-dm.org/nielse63/if-is-image?type=dev)
 [![Code Climate](https://codeclimate.com/github/nielse63/if-is-image/badges/gpa.svg)](https://codeclimate.com/github/nielse63/if-is-image)
 [![NPM version](https://badge.fury.io/js/if-is-image.svg)](http://badge.fury.io/js/if-is-image)
 

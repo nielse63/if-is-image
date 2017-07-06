@@ -1,0 +1,37 @@
+{
+  "name": "if-is-image",
+  "description": "Check if a string, filepath, or url references an image file",
+  "main": "dist/if-is-image.min.js",
+  "authors": [
+    "Erik Nielsen <erik@312develpoment.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ext",
+    "extensions",
+    "extension",
+    "file",
+    "path",
+    "check",
+    "detect",
+    "is",
+    "image",
+    "img",
+    "photo",
+    "pic",
+    "picture",
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "webp"
+  ],
+  "homepage": "https://github.com/nielse63/if-is-image",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
