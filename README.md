@@ -12,19 +12,19 @@ Check if a string, filepath, or url references an image file.
 
 ### With `npm`
 
-```
+```sh
 npm install if-is-image
 ```
 
 ### With `yarn`
 
-```
+```sh
 yarn add if-is-image
 ```
 
 ### With `bower`
 
-```
+```sh
 bower install if-is-image
 ```
 
@@ -74,7 +74,7 @@ const isImage = ifIsImage('path/to/file');
 
 Fork the repo and clone locally, then run:
 
-```
+```sh
 yarn install
 ```
 
