@@ -1,0 +1,61 @@
+{
+  "name": "if-is-image",
+  "version": "1.0.0",
+  "description": "Check if a string, filepath, or url references an image file",
+  "main": "index.js",
+  "repository": "https://github.com/nielse63/if-is-image",
+  "author": {
+    "name": "Erik Nielsen",
+    "email": "erik@312development.com",
+    "url": "https://312development.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/nielse63/if-is-image",
+  "keywords": [
+    "ext",
+    "extensions",
+    "extension",
+    "file",
+    "path",
+    "check",
+    "detect",
+    "is",
+    "image",
+    "img",
+    "photo",
+    "pic",
+    "picture",
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "webp"
+  ],
+  "bugs": "https://github.com/nielse63/if-is-image/issues",
+  "scripts": {
+    "lint": "eslint src",
+    "minify": "uglifyjs dist/if-is-image.js -m -c -o dist/if-is-image.min.js",
+    "prebuild": "yarn run lint && rm -rf dist",
+    "build": "babel src -d dist --source-maps inline",
+    "postbuild": "npm run minify",
+    "pretest": "rm -rf coverage *.log",
+    "test": "nyc mocha --opts test/unit/mocha.opts test/unit/index.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
+    "chai-asserttype": "^1.0.5",
+    "coveralls": "^2.13.1",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3",
+    "uglify-js": "^3.0.23"
+  }
+}
