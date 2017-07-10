@@ -1,7 +1,7 @@
 {
   "name": "if-is-image",
   "description": "Check if a string, filepath, or url references an image file",
-  "main": "dist/if-is-image.min.js",
+  "main": "lib/if-is-image.min.js",
   "authors": [
     "Erik Nielsen <erik@312develpoment.com>"
   ],

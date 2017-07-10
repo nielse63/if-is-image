@@ -5,6 +5,7 @@
 [![devDependencies Status](https://david-dm.org/nielse63/if-is-image/dev-status.svg)](https://david-dm.org/nielse63/if-is-image?type=dev)
 [![Code Climate](https://codeclimate.com/github/nielse63/if-is-image/badges/gpa.svg)](https://codeclimate.com/github/nielse63/if-is-image)
 [![NPM version](https://badge.fury.io/js/if-is-image.svg)](http://badge.fury.io/js/if-is-image)
+[![npm](https://img.shields.io/npm/dt/if-is-image.svg?style=flat-square)](https://www.npmjs.com/package/if-is-image)
 
 Check if a string, filepath, or url references an image file.
 
@@ -44,30 +45,34 @@ or using ES5 syntax:
 const ifIsImage = require('if-is-image');
 ```
 
-And execute the script:
-
-```js
-const isImage = ifIsImage('path/to/file');
-```
-
 ### In the browser
 
 Reference your local script:
 
 ```html
-<script src="node_modules/if-is-image/dist/if-is-image.min.js"></script>
+<script src="node_modules/if-is-image/lib/if-is-image.min.js"></script>
 ```
 
 Or load the script via jsdelivr:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/if-is-image@latest/dist/if-is-image.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/if-is-image@latest/lib/if-is-image.min.js"></script>
 ```
 
 And execute the script:
 
 ```js
 const isImage = ifIsImage('path/to/file');
+// false
+
+const isImage = ifIsImage('path/to/image.jpg');
+// true
+
+const isImage = ifIsImage('path/to/image.webp');
+// true
+
+const isImage = ifIsImage({});
+// throw: Path to image must be a string
 ```
 
 ## Contributing
@@ -78,7 +83,7 @@ Fork the repo and clone locally, then run:
 yarn install
 ```
 
-This will install the `devDependencies` packages and build the `dist` folder.
+This will install the `devDependencies` packages and build the `lib` folder.
 
 Once you've made your desired changes, make sure to write any new tests for
 your feature and run the tests:
@@ -89,4 +94,4 @@ yarn run lint # lints js
 yarn test     # runs test suite
 ```
 
-If all tests pass, [create a pull request](https://github.com/nielse63/if-is-image/pull).
+If all tests pass, [create a pull request](https://github.com/nielse63/if-is-image/pulls).

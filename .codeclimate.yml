@@ -18,7 +18,7 @@ ratings:
   - "**.js"
   - "**.md"
 exclude_paths:
-- dist/
+- lib/
 - node_modules/
 - test/
 - coverage/
