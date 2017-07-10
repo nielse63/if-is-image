@@ -33,7 +33,7 @@
   ],
   "bugs": "https://github.com/nielse63/if-is-image/issues",
   "scripts": {
-    "lint": "eslint src",
+    "lint": "eslint src ./*.js --ignore-pattern '!.eslintrc.js'",
     "minify": "uglifyjs lib/if-is-image.js -m -c -o lib/if-is-image.min.js",
     "rollup": "rollup --input lib/if-is-image.js --format umd --output lib/if-is-image.js",
     "prebuild": "npm run lint && rm -rf lib && mkdir lib",
