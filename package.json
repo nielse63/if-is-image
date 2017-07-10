@@ -52,12 +52,16 @@
     "chai": "^4.0.2",
     "chai-asserttype": "^1.0.5",
     "coveralls": "^2.13.1",
-    "eslint": "^4.1.1",
+    "eslint": "^4.2.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
     "mocha": "^3.4.2",
     "nyc": "^11.0.3",
     "rollup": "^0.45.0",
-    "uglify-js": "^3.0.23"
+    "uglify-js": "^3.0.24"
+  },
+  "engines": {
+    "node": ">= 8.x",
+    "npm": ">= 5.x"
   }
 }
