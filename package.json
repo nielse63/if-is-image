@@ -1,6 +1,6 @@
 {
   "name": "if-is-image",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Check if a string, filepath, or url references an image file",
   "main": "index.js",
   "repository": "https://github.com/nielse63/if-is-image",
