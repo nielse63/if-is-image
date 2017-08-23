@@ -35,7 +35,7 @@
   "scripts": {
     "lint": "eslint src ./*.js --ignore-pattern '!.eslintrc.js'",
     "minify": "uglifyjs lib/if-is-image.js -m -c -o lib/if-is-image.min.js",
-    "rollup": "rollup --input lib/if-is-image.js --format umd --output lib/if-is-image.js",
+    "rollup": "rollup --input lib/if-is-image.js --output.format umd --output.file lib/if-is-image.js",
     "prebuild": "npm run lint && rm -rf lib && mkdir lib",
     "build": "babel src -d lib",
     "postbuild": "npm run rollup && npm run minify",
@@ -45,20 +45,20 @@
     "prepublishOnly": "npm test && npm run build"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.24.1",
-    "chai": "^4.1.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.1",
     "chai-asserttype": "^1.0.5",
     "coveralls": "^2.13.1",
-    "eslint": "^4.2.0",
-    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
     "eslint-plugin-import": "^2.7.0",
-    "mocha": "^3.4.2",
-    "nyc": "^11.0.3",
-    "rollup": "^0.45.2",
-    "uglify-js": "^3.0.25"
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "rollup": "^0.48.2",
+    "uglify-js": "^3.0.28"
   },
   "engines": {
     "node": ">= 8.x",
