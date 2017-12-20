@@ -13,20 +13,14 @@ Check if a string, filepath, or url references an image file.
 
 ### With `npm`
 
-```sh
+```bash
 npm install if-is-image
 ```
 
 ### With `yarn`
 
-```sh
+```bash
 yarn add if-is-image
-```
-
-### With `bower`
-
-```sh
-bower install if-is-image
 ```
 
 ## Usage
@@ -37,49 +31,24 @@ Import the script to your project
 
 ```js
 import ifIsImage from 'if-is-image';
-```
-
-or using ES5 syntax:
-
-```js
+// or
 const ifIsImage = require('if-is-image');
-```
-
-### In the browser
-
-Reference your local script:
-
-```html
-<script src="node_modules/if-is-image/lib/if-is-image.min.js"></script>
-```
-
-Or load the script via jsdelivr:
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/if-is-image@latest/lib/if-is-image.min.js"></script>
 ```
 
 And execute the script:
 
 ```js
-const isImage = ifIsImage('path/to/file');
-// false
-
-const isImage = ifIsImage('path/to/image.jpg');
-// true
-
-const isImage = ifIsImage('path/to/image.webp');
-// true
-
-const isImage = ifIsImage({});
-// throw: Path to image must be a string
+const isImage = ifIsImage('path/to/file');       // false
+const isImage = ifIsImage('path/to/image.jpg');  // true
+const isImage = ifIsImage('path/to/image.webp'); // true
+const isImage = ifIsImage({});                   // throw: Path to image must be a string
 ```
 
 ## Contributing
 
 Fork the repo and clone locally, then run:
 
-```sh
+```bash
 yarn install
 ```
 
@@ -88,9 +57,8 @@ This will install the `devDependencies` packages and build the `lib` folder.
 Once you've made your desired changes, make sure to write any new tests for
 your feature and run the tests:
 
-```sh
+```bash
 yarn run lint # lints js
-
 yarn test     # runs test suite
 ```
 
