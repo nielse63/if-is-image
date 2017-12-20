@@ -1,7 +1,4 @@
 {
-  "require": [
-    "babel-register"
-  ],
   "sourceMap": true,
   "reporter": [
     "lcov",
@@ -13,5 +10,6 @@
   "lines": 99,
   "statements": 99,
   "functions": 99,
-  "branches": 99
+  "branches": 99,
+  "cache": true
 }

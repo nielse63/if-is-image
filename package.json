@@ -1,8 +1,7 @@
 {
   "name": "if-is-image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Check if a string, filepath, or url references an image file",
-  "main": "index.js",
   "repository": "https://github.com/nielse63/if-is-image",
   "author": {
     "name": "Erik Nielsen",
@@ -32,36 +31,70 @@
     "webp"
   ],
   "bugs": "https://github.com/nielse63/if-is-image/issues",
+  "main": "lib/if-is-image.js",
+  "files": [
+    "lib/"
+  ],
+  "directories": {
+    "lib": "./lib"
+  },
   "scripts": {
-    "lint": "eslint src ./*.js --ignore-pattern '!.eslintrc.js'",
-    "minify": "uglifyjs lib/if-is-image.js -m -c -o lib/if-is-image.min.js",
-    "rollup": "rollup --input lib/if-is-image.js --output.format umd --output.file lib/if-is-image.js",
-    "prebuild": "npm run lint && rm -rf lib && mkdir lib",
-    "build": "babel src -d lib",
-    "postbuild": "npm run rollup && npm run minify",
-    "pretest": "rm -rf coverage *.log",
-    "test": "nyc mocha --opts test/unit/mocha.opts test/unit/index.js",
+    "lint": "eslint src/ test/ --cache --fix",
+    "build": "cross-env NODE_ENV=production babel src/ -d lib/",
+    "test": "nyc mocha test/specs/*.spec.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "prepublishOnly": "npm test && npm run build"
+    "commitmsg": "validate-commit-msg",
+    "precommit": "lint-staged",
+    "prepush": "nsp check",
+    "release": "unleash -p"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-istanbul": "^4.1.5",
     "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.1",
     "chai-asserttype": "^1.0.5",
-    "coveralls": "^2.13.1",
+    "conventional-commit-types": "^2.2.0",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.1.1",
+    "current-git-branch": "^1.0.1",
     "eslint": "^4.5.0",
-    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-xo": "^0.19.0",
+    "eslint-plugin-flowtype": "^2.40.1",
     "eslint-plugin-import": "^2.7.0",
-    "mocha": "^3.5.0",
-    "nyc": "^11.1.0",
-    "rollup": "^0.48.2",
-    "uglify-js": "^3.0.28"
+    "eslint-plugin-prettier": "^2.4.0",
+    "flow-bin": "^0.61.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "markdownlint-cli": "^0.5.0",
+    "mocha": "^4.0.1",
+    "nsp": "^3.1.0",
+    "nyc": "^11.4.1",
+    "prettier": "^1.9.2",
+    "staged-git-files": "^0.0.4",
+    "unleash": "^2.0.1",
+    "validate-commit-msg": "^2.14.0"
   },
   "engines": {
     "node": ">= 8.x",
-    "npm": ">= 5.x"
+    "npm": ">= 5.x",
+    "yarn": ">= 1.x"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": "conventional-commit-types",
+      "subjectPatternErrorMsg": "[validate-commit-msg]: Subject does not match subject pattern!",
+      "autoFix": true
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

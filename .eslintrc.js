@@ -5,22 +5,31 @@ module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
+    ecmaVersion: 2017,
   },
   env: {
-    browser: true,
     node: true,
     es6: true,
   },
   extends: [
-    'airbnb-base',
+    'xo/esnext',
+    'plugin:flowtype/recommended',
+    'prettier',
+    'prettier/flowtype',
   ],
+  plugins: ['import', 'flowtype', 'prettier'],
   rules: {
-    'comma-dangle': ['error', {
-      arrays: 'always-multiline',
-      objects: 'always-multiline',
-      imports: 'always-multiline',
-      exports: 'always-multiline',
-      functions: 'ignore',
-    }],
+    'func-names': ['error', 'always'],
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'all',
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: ['test/**/*.js'] },
+    ],
   },
 };
