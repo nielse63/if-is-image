@@ -13,6 +13,8 @@ engines:
     enabled: true
   shellcheck:
     enabled: true
+  nodesecurity:
+    enabled: true
 ratings:
   paths:
   - "**.js"
@@ -22,3 +24,4 @@ exclude_paths:
 - node_modules/
 - test/
 - coverage/
+- CHANGELOG.md

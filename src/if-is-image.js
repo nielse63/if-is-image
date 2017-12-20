@@ -1,7 +1,13 @@
+// @flow
 
-export default function ifIsImage(filepath) {
+module.exports = function ifIsImage(filepath: string = ''): boolean {
+  if (!filepath) {
+    throw new TypeError('No filepath given');
+  }
+
   if (typeof filepath !== 'string') {
     throw new TypeError('Path to image must be a string');
   }
-  return /\.(png|jpe?g|gif|webp|svg)(\?.*)?$/.test(filepath);
-}
+
+  return Boolean(/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/.test(filepath));
+};
