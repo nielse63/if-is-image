@@ -1,17 +1,21 @@
-
+---
 language: node_js
 node_js:
-  - "node"
-sudo: false
+  - node
 dist: trusty
-cache:
-  yarn: true
-  directories:
-    - node_modules
-install:
-  - yarn
+env:
+  global:
+    - NODE_ENV=test
+before_install:
+  - npm config set spin false
+  - npm i -g greenkeeper-lockfile@2
+before_script:
+  - greenkeeper-lockfile-update
+after_script:
+  - greenkeeper-lockfile-upload
+after_success:
+  - yarn coverage
 
 script:
+  - yarn lint
   - yarn test
-
-after_success: yarn run coverage
