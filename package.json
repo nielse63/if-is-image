@@ -1,6 +1,6 @@
 {
   "name": "if-is-image",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Check if a string, filepath, or url references an image file",
   "repository": "https://github.com/nielse63/if-is-image",
   "author": {
