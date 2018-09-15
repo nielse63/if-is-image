@@ -39,57 +39,45 @@
     "lib": "./lib"
   },
   "scripts": {
-    "lint": "eslint src/ test/ --cache --fix",
+    "lint": "eslint src/ test/ --fix",
     "build": "cross-env NODE_ENV=production babel src/ -d lib/",
     "test": "nyc mocha test/specs/*.spec.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "commitmsg": "validate-commit-msg",
     "precommit": "lint-staged",
-    "prepush": "nsp check",
     "release": "unleash -p"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
-    "babel-plugin-istanbul": "^4.1.5",
-    "babel-preset-env": "^1.6.0",
+    "babel-plugin-istanbul": "^5.0.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.1",
     "chai-asserttype": "^1.0.5",
     "conventional-commit-types": "^2.2.0",
-    "coveralls": "^3.0.0",
-    "cross-env": "^5.1.1",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
     "current-git-branch": "^1.0.1",
     "eslint": "^5.4.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-config-xo": "^0.25.0",
-    "eslint-plugin-flowtype": "^2.40.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-prettier": "^2.4.0",
-    "flow-bin": "^0.80.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "flow-bin": "^0.81.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
     "markdownlint-cli": "^0.13.0",
     "mocha": "^5.2.0",
-    "nsp": "^3.1.0",
-    "nyc": "^12.0.2",
-    "prettier": "^1.9.2",
-    "staged-git-files": "^1.1.1",
-    "unleash": "^2.0.1",
-    "validate-commit-msg": "^2.14.0"
+    "nyc": "^13.0.1",
+    "prettier": "^1.14.2",
+    "unleash": "^2.0.1"
   },
   "engines": {
     "node": ">= 8.x",
     "npm": ">= 5.x",
     "yarn": ">= 1.x"
-  },
-  "config": {
-    "validate-commit-msg": {
-      "types": "conventional-commit-types",
-      "subjectPatternErrorMsg": "[validate-commit-msg]: Subject does not match subject pattern!",
-      "autoFix": true
-    }
   },
   "lint-staged": {
     "*.js": [
