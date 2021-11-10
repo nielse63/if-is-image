@@ -55,7 +55,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.1",
     "chai-asserttype": "^1.0.5",
-    "conventional-commit-types": "^2.2.0",
+    "conventional-commit-types": "^2.3.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "current-git-branch": "^1.0.1",
